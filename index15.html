@@ -7,22 +7,31 @@
   <title>15</title>
 </head>
 <body>
-  <script>
-    let name = prompt("Введите сюда своё имя", 'Введите имя');
-    if (name < 'a' && name > 'z') {
-      alert('Вы ввели невалидные данные!');
-    }
-    document.write("Ваше имя " + name + ". Очень рады знакомству с Вами!!!");
-    let ages = prompt("Сколько Вам лет, если не секрет ?", '35 лет');
-    if (ages >= '0' && ages <= '9') {
-      ages = Number(ages) + 10;
-      alert("Через 10 лет Вам исполнится " + ages + " лет!");
-    }
-    else {
-      alert('Вы ввели невалидные данные!');
-    }
-    let starAgain = confirm("Начать заново?");
-
+ <script >
+  let name = prompt("Введите сюда своё имя", 'Введите имя');
+      if (typeof (name) === 'string' && name.match(/^([а-яё][А-ЯЁ]+|[a-z][A-Z]+)$/i)) 
+        {
+          document.write("Ваше имя " + name + ". Очень рады знакомству с Вами!!!");
+        } 
+        else 
+        {
+          document.write("Введены неверные данные");
+        }
+   let ages = prompt("Сколько Вам лет, если не секрет ?", 35);
+        if (isNaN(ages) == true || ages == "") 
+        {
+          alert("Ваш возраст не известен!");
+        }
+        else if (typeof (ages) === 'string' && ages.match(/^ ([а - яё][А - ЯЁ] +| [a - z][A - Z] +)$/i)) 
+        {
+          alert("Введите цифры для возраста");
+        }
+        else 
+        {
+          ages = Number(ages) + 10;
+          alert("Через 10 лет Вам исполнится " + ages + " лет!");
+        }
+    let repeat = confirm("Начать заново?");
   </script>
 </body>
 </html>
